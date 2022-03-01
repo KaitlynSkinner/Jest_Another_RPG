@@ -10,18 +10,21 @@ As a user I want to play an RPG with characters, enemies, and a game object. I w
   * [Features](#features)
   * [Installation](#installation)
   * [Usage](#usage)
-  * [License] (#license)
+  * [License](#license)
   * [Credits](#credits)
   * [How to Contribute](#howtocontribute)
   * [Tests](#tests)
-  * [Questions] (#questions)
+  * [Questions](#questions)
 
 ## Features
 - Potion has three different types: health, agility, and strength.
+- Player has: an inventory, health, strength, and agility.
 
 ## Installation
 
+
 ## Usage
+
 
 ## License
 The content of this application itself is not licensed.
