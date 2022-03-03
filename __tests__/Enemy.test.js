@@ -15,14 +15,22 @@ test('creates an enemy object', () => {
 });
 
 test("gets enemy's health value", () => {
-    const enemy = new Enemy('wizard', 'wand');
+    const enemy = new Enemy('goblin', 'sword');
 
     expect(enemy.getHealth()).toEqual(expect.stringContaining(enemy.health.toString()));
 });
 
+// check for the enemy's description, as shown in the following code:
+test('gets a description of the enemy', () => {
+    const enemy = new Enemy('goblin', 'sword');
+
+    expect(enemy.getDescription()).toEqual(expect.stringContaining('goblin'));
+    expect(enemy.getDescription()).toEqual(expect.stringContaining('sword'));
+});
+
 // updating the value of our Enemy health halfway through the test so that we can check for both conditions: true and false.
 test('checks if enemy is alive or not', () => {
-    const enemy = new Enemy('dragon', 'fire');
+    const enemy = new Enemy('goblin', 'sword');
 
     expect(enemy.isAlive()).toBeTruthy();
 
@@ -32,7 +40,7 @@ test('checks if enemy is alive or not', () => {
 });
 
 test("gets enemy's attack value", () => {
-    const enemy = new Enemy('mages', 'magic');
+    const enemy = new Enemy('goblin', 'sword');
     enemy.strength = 10;
 
     expect(enemy.getAttackValue()).toBeGreaterThanOrEqual(5);
@@ -40,7 +48,7 @@ test("gets enemy's attack value", () => {
 });
 
 test("subtracts from enemy's health", () => {
-    const enemy = new Enemy('orc', 'battleaxe');
+    const enemy = new Enemy('goblin', 'sword');
     const oldHealth = enemy.health;
 
     enemy.reduceHealth(5);
@@ -50,12 +58,4 @@ test("subtracts from enemy's health", () => {
     enemy.reduceHealth(99999);
 
     expect(enemy.health).toBe(0);
-});
-
-// check for the enemy's description, as shown in the following code:
-test('gets a description of the enemy', () => {
-    const enemy = new Enemy('', '');
-
-    expect(enemy.getDescription()).toEqual(expect.stringContaining(''));
-    expect(enemy.getDescription()).toEqual(expect.stringContaining(''));
 });
